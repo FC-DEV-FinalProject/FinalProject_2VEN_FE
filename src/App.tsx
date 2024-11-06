@@ -1,6 +1,6 @@
 const App: React.FC = () => (
   <div>
-    <h1>Hello world</h1>
+    <h1>FinalProject_2VEN_FE</h1>
   </div>
 );
 
