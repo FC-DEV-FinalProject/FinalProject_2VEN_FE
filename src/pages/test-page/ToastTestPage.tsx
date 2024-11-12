@@ -9,8 +9,8 @@ const ToastTestPage = () => {
   const { isToastVisible, showToast, hideToast } = useToastStore();
 
   const handleShowToast = () => {
+    console.log('토스트 버튼 클릭');
     showToast('링크가 복사되었습니다!');
-    setTimeout(hideToast, 3000);
   };
 
   return (

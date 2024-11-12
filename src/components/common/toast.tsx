@@ -46,6 +46,7 @@ const toastStyles = (isVisible: boolean) => css`
   animation: ${isVisible ? fadeIn : fadeOut} 0.5s ease;
   flex-shrink: 0;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  ${theme.textStyle.body.body2};
 `;
 
 const Toast: React.FC<ToastProps> = ({ message, onClose, duration = 3000, isVisible }) => {
