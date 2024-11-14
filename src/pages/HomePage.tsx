@@ -39,7 +39,7 @@ const HomePage = () => {
   useEffect(() => {
     const fetchNotices = async () => {
       try {
-        const response = await fetch(`${apiHost}api/notices`);
+        const response = await fetch(`${apiHost}/api/notices`);
         if (!response.ok) {
           throw new Error(`Error: ${response.status}`);
         }
