@@ -37,6 +37,7 @@ const HomePage = () => {
   const apiHost = import.meta.env.VITE_BASE_URL;
 
   useEffect(() => {
+    console.log('API Host:', apiHost); // 확인용 콘솔 로그
     const fetchNotices = async () => {
       try {
         const response = await fetch(`${apiHost}api/notices`);

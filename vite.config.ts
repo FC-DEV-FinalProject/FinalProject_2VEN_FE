@@ -13,6 +13,12 @@ export default defineConfig({
     tsconfigPaths(),
   ],
   server: {
-    port: 3000, // 어떤 포트로 서버를 열지
+    proxy: {
+      '/api': {
+        target: process.env.VITE_BASE_URL,
+        changeOrigin: true,
+        secure: false,
+      },
+    },
   },
 });
