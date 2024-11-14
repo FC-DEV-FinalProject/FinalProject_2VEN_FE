@@ -34,12 +34,12 @@ interface NoticesData {
 
 const HomePage = () => {
   const [noticesData, setNoticesData] = useState<NoticesData | null>(null);
-  const apiUrl = import.meta.env.VITE_API_URL;
+  const apiHost = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
     const fetchNotices = async () => {
       try {
-        const response = await fetch(`${apiUrl}api/notices`);
+        const response = await fetch(`${apiHost}api/notices`);
         if (!response.ok) {
           throw new Error(`Error: ${response.status}`);
         }
@@ -51,7 +51,7 @@ const HomePage = () => {
     };
 
     fetchNotices();
-  }, [apiUrl]);
+  }, [apiHost]);
 
   return (
     <div>
