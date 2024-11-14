@@ -41,7 +41,11 @@ const HomePage = () => {
     const fetchNotices = async () => {
       try {
         console.log('Requesting URL:', `${import.meta.env.VITE_BASE_URL}/api/notices`);
-        const response = await fetch('/api/notices');
+        const response = await fetch('/api/notices', {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
         console.log('Response status:', response.status);
         const data = await response.json();
         console.log('Response data:', data);
