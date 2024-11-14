@@ -50,7 +50,7 @@ const HomePage = () => {
         console.error('Failed to fetch notices:', error);
       }
     };
-
+    console.log(import.meta.env);
     fetchNotices();
   }, [apiHost]);
 
