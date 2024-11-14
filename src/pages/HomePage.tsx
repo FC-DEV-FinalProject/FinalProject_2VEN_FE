@@ -34,7 +34,7 @@ interface NoticesData {
 
 const HomePage = () => {
   const [noticesData, setNoticesData] = useState<NoticesData | null>(null);
-  const apiHost = import.meta.env.VITE_API_URL;
+  const apiHost = import.meta.env.VITE_BASE_URL;
 
   useEffect(() => {
     const fetchNotices = async () => {
