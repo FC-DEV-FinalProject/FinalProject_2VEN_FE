@@ -2,7 +2,12 @@ import { css } from '@emotion/react';
 
 import StrategyContent from '@/components/page/strategy/StrategyContent';
 import StrategyIndicator from '@/components/page/strategy/StrategyIndicator';
+import StrategyTab from '@/components/page/strategy/StrategyTab';
 import StrategyTitleSection from '@/components/page/strategy/StrategyTitleSection';
+import AccountVerify from '@/components/page/strategy/tabmenu/AccountVerify';
+import DailyAnalysis from '@/components/page/strategy/tabmenu/DailyAnalysis';
+import MonthlyAnalysis from '@/components/page/strategy/tabmenu/MonthlyAnalysis';
+import Statistics from '@/components/page/strategy/tabmenu/Statistics';
 import theme from '@/styles/theme';
 
 const strategyDummy = [
@@ -25,6 +30,24 @@ const strategyDummy = [
     },
   },
 ];
+const tabMenu = [
+  {
+    title: '통계',
+    component: <Statistics />,
+  },
+  {
+    title: '실계좌인증',
+    component: <AccountVerify />,
+  },
+  {
+    title: '일간분석',
+    component: <DailyAnalysis />,
+  },
+  {
+    title: '월간분석',
+    component: <MonthlyAnalysis />,
+  },
+];
 
 const StrategyDetailPage = () => (
   <div css={containerStyle}>
@@ -45,6 +68,7 @@ const StrategyDetailPage = () => (
             profitFactor={strategy.indicator.profitFactor}
             winRate={strategy.indicator.winRate}
           />
+          <StrategyTab tabs={tabMenu} />
         </div>
       ))}
     </div>
