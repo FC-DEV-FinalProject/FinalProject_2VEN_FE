@@ -34,13 +34,13 @@ interface NoticesData {
 
 const HomePage = () => {
   const [noticesData, setNoticesData] = useState<NoticesData | null>(null);
-  const apiHost = import.meta.env.VITE_BASE_URL;
+  // const apiHost = import.meta.env.VITE_BASE_URL;
 
   useEffect(() => {
-    console.log('API Host:', apiHost); // 확인용 콘솔 로그
+    // console.log('API Host:', apiHost); // 확인용 콘솔 로그
     const fetchNotices = async () => {
       try {
-        const response = await fetch(`${apiHost}api/notices`);
+        const response = await fetch(`/api/notices`);
         if (!response.ok) {
           throw new Error(`Error: ${response.status}`);
         }
@@ -52,7 +52,7 @@ const HomePage = () => {
     };
     console.log(import.meta.env);
     fetchNotices();
-  }, [apiHost]);
+  }, []);
 
   return (
     <div>

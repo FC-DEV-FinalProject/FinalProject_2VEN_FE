@@ -3,7 +3,6 @@ import react from '@vitejs/plugin-react';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig(({ mode }) => {
-  // .env 파일에서 환경 변수를 불러오기
   const env = loadEnv(mode, process.cwd());
 
   return {
@@ -17,6 +16,7 @@ export default defineConfig(({ mode }) => {
       tsconfigPaths(),
     ],
     server: {
+      port: 3000,
       proxy: {
         '/api': {
           target: env.VITE_BASE_URL,
