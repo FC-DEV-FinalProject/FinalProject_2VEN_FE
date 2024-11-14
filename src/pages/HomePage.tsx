@@ -1,6 +1,9 @@
+
 import { useEffect, useState } from 'react';
 
 import SignUpSelectTypePage from '@/pages/auth/signup/SignUpSelectTypePage';
+
+
 
 interface Pageable {
   pageNumber: number;

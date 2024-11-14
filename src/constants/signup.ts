@@ -1,4 +1,5 @@
 import InvestorCardImage from '@/assets/images/investor_card.png';
+import SignupSuccessImage from '@/assets/images/signup_success.png';
 import TraderCardImage from '@/assets/images/trader_card.png';
 import { UserTypeText } from '@/types/signup';
 export const USER_TYPE_TEXT: UserTypeText = {
@@ -22,4 +23,11 @@ export const TERMS_CHECKBOX_TITLE = {
   TRADER_TERMS_REQUIRED: '[필수] 트레이더 회원 이용약관',
   PROMOTION_OPTIONAL: '[선택] 관심 전략과 정보를 수신 동의합니다.',
   MARKETING_OPTIONAL: '[선택] 정보성 마케팅 정보 알림에 수신 동의합니다.',
+};
+
+export const SIGNUP_SUCCESS_TEXT = {
+  heading: '가입이 완료되었습니다!',
+  description: 'Sysmetic과 함께 쉽고, 간편한 투자 여정을 시작해 보세요!',
+  src: SignupSuccessImage,
+  alt: '가입완료 이미지',
 };
