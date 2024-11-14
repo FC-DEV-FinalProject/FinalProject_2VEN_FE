@@ -1,9 +1,38 @@
 import { useEffect, useState } from 'react';
 
-import SignUpSuccessPage from '@/pages/auth/signup/SignUpSuccessPage';
+interface Pageable {
+  pageNumber: number;
+  pageSize: number;
+  offset: number;
+  paged: boolean;
+  unpaged: boolean;
+  sort: {
+    sorted: boolean;
+    empty: boolean;
+    unsorted: boolean;
+  };
+}
+
+interface NoticesData {
+  content: { id: number; title: string; body: string }[];
+  pageable: Pageable;
+  totalElements: number;
+  totalPages: number;
+  last: boolean;
+  size: number;
+  number: number;
+  sort: {
+    sorted: boolean;
+    empty: boolean;
+    unsorted: boolean;
+  };
+  numberOfElements: number;
+  first: boolean;
+  empty: boolean;
+}
 
 const HomePage = () => {
-  const [noticesData, setNoticesData] = useState([]);
+  const [noticesData, setNoticesData] = useState<NoticesData | null>(null);
   useEffect(() => {
     console.log('Updated noticesData:', noticesData);
   }, [noticesData]);
@@ -26,7 +55,11 @@ const HomePage = () => {
   return (
     <div>
       <div>
-        <SignUpSuccessPage />
+        {noticesData && (
+          <ul>
+            <li>Total Elements: {noticesData.totalElements}</li>
+          </ul>
+        )}
       </div>
     </div>
   );
