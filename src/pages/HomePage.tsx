@@ -37,20 +37,19 @@ const HomePage = () => {
   // const apiHost = import.meta.env.VITE_BASE_URL;
 
   useEffect(() => {
-    // console.log('API Host:', apiHost); // 확인용 콘솔 로그
+    console.log('VITE_BASE_URL:', import.meta.env.VITE_BASE_URL);
     const fetchNotices = async () => {
       try {
-        const response = await fetch(`/api/notices`);
-        if (!response.ok) {
-          throw new Error(`Error: ${response.status}`);
-        }
-        const data: NoticesData = await response.json();
+        console.log('Requesting URL:', `${import.meta.env.VITE_BASE_URL}/api/notices`);
+        const response = await fetch('/api/notices');
+        console.log('Response status:', response.status);
+        const data = await response.json();
+        console.log('Response data:', data);
         setNoticesData(data);
       } catch (error) {
-        console.error('Failed to fetch notices:', error);
+        console.error('Error details:', error);
       }
     };
-    console.log(import.meta.env);
     fetchNotices();
   }, []);
 
