@@ -9,15 +9,14 @@ export default defineConfig(({ mode }) => {
     server: {
       proxy: {
         '/api': {
-          target: env.VITE_BASE_URL || 'http://your-default-url',
+          target: env.VITE_BASE_URL,
           changeOrigin: true,
           secure: false,
-          rewrite: (path) => path.replace(/^\/api/, '/api'),
         },
       },
     },
     define: {
-      'process.env.VITE_BASE_URL': JSON.stringify(env.VITE_BASE_URL),
+      'import.meta.env.VITE_BASE_URL': JSON.stringify(env.VITE_BASE_URL),
     },
   };
 });

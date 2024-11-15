@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+import { API_BASE_URL } from '@/constants/api';
+
 interface Pageable {
   pageNumber: number;
   pageSize: number;
@@ -37,10 +39,9 @@ const HomePage = () => {
     console.log('Updated noticesData:', noticesData);
   }, [noticesData]);
   useEffect(() => {
-    console.log('VITE_BASE_URL:', import.meta.env.VITE_BASE_URL);
     const fetchNotices = async () => {
       try {
-        console.log('Requesting URL:', `${import.meta.env.VITE_BASE_URL}/api/notices`);
+        console.log('Requesting URL:', `${API_BASE_URL}}/api/notices`);
         const response = await fetch('/api/notices', {
           headers: {
             'Content-Type': 'application/json',
