@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/api/*"
+  to = "${VITE_BASE_URL}/api/:splat"
+  status = 200
