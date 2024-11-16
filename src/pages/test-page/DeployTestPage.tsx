@@ -113,8 +113,6 @@ const DeployTestPage = () => {
       <h1>너는 알까~ 두근거리는 내 마음~</h1>
       {notices ? (
         <ul>
-          <li>Page Number: {notices.pageable.pageNumber}</li>
-          <li>Page Size: {notices.pageable.pageSize}</li>
           <li>Total Elements: {notices.totalElements}</li>
           <li>Total Pages: {notices.totalPages}</li>
           <li>Is First Page: {notices.first ? 'Yes' : 'No'}</li>
