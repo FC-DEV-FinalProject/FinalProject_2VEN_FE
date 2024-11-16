@@ -8,6 +8,7 @@ import InvestorMainImage from '@/assets/images/investor_main.png';
 import TraderUserImage2 from '@/assets/images/nimo_trader.png';
 import Button from '@/components/common/Button';
 import { ROUTES } from '@/constants/routes';
+import DeployTestPage from '@/pages/test-page/DeployTestPage';
 import theme from '@/styles/theme';
 
 const HomePage = () => {
@@ -28,6 +29,7 @@ const HomePage = () => {
   return (
     <>
       {/* 투자자Main */}
+      <DeployTestPage />
       <section css={containerStyle}>
         <div css={contentStyle}>
           {/* 왼쪽 영역 */}
