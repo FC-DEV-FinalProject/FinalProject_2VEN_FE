@@ -90,9 +90,7 @@ const DeployTestPage = () => {
 
         const data = await response.data;
         setNotices(data);
-        console.log('API Response:', response);
-        console.log('Notices state:', notices);
-        console.log('API Response:', response.data); // 디버깅용
+        console.log('API Response:', data); // 디버깅용
         console.error('Failed to fetch notices:', error); // 디버깅 로그
       } catch (error) {
         if (axios.isAxiosError(error)) {
