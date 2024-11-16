@@ -85,7 +85,7 @@ const DeployTestPage = () => {
         console.log('API_BASE_URL:', API_BASE_URL);
         console.log('apiClient baseURL:', apiClient.defaults.baseURL);
 
-        const response = await apiClient.get(`${API_BASE_URL}/api/notices`);
+        const response = await apiClient.get(`/notices`);
         console.log('Response status:', response.status);
 
         const data = await response.data;
