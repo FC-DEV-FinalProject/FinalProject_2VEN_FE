@@ -1,0 +1,30 @@
+# .sourcery.yaml
+
+ignore:
+  - .git
+  - node_modules
+  - build
+  - dist
+  - coverage
+
+rule_settings:
+  enable:
+    - default
+    - typescript
+    - react
+  disable: []
+
+metrics:
+  quality_threshold: 30.0 # 30 미만의 품질 점수를 가진 코드에 대해 경고(TypeScript는 좀 더 높은 임계값 권장)
+
+github:
+  labels: []
+  ignore_labels:
+    - sourcery-ignore
+  request_review: author # PR 작성자에게 리뷰 요청
+  sourcery_branch: sourcery/{base_branch}
+
+clone_detection:
+  min_lines: 5 # React 컴포넌트는 좀 더 긴 중복을 허용
+  min_duplicates: 2
+  identical_clones_only: true # TypeScript는 타입 때문에 비슷한 코드가 많을 수 있음
